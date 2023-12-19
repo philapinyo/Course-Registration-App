@@ -1,14 +1,20 @@
-{% extends "base.html" %}
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
 
-<!DOCTYPE html>
-<html>
+{% block title %}Contact Us{% endblock %}
 
-<head>
-    <title>Student IT Services - contact</title>
-</head>
-
-<body>
-    <h1>Welcome to Student IT Services</h1>
-</body>
-
-</html>
+{% block content %}
+    <div class="content-section">
+        <form method="post" class="form">
+            {% csrf_token %}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">Module Registration - Contact Us</legend>
+                
+                {{ form|crispy }}
+            </fieldset>
+            <div class="form-group">
+                <button class="btn btn-outline-info" type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+{% endblock %}

@@ -34,8 +34,8 @@
                             {% if user.is_authenticated %}
                                 <a class="nav-item nav-link" href="{% url 'logout' %}">Logout</a>
                             {% else %}
-                                <a class="nav-item nav-link" href="#">Login</a>
-                                <a class="nav-item nav-link" href="#">Register</a>
+                                <a class="nav-item nav-link" href="{% url 'DCBSapp:login' %}">Login</a>
+                                <a class="nav-item nav-link" href="{% url 'DCBSapp:register' %}">Register</a>
                             {% endif %}
                         </div>
                     </div>
